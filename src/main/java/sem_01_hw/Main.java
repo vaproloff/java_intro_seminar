@@ -11,9 +11,8 @@ public class Main {
         ex_3();
     }
 
+    /*  1. Задать одномерный массив и найти в нем минимальный и максимальный элементы */
     private static void ex_1() {
-    /*  1. Задать одномерный массив и найти в нем минимальный и максимальный элементы
-    */
         int[] arr = new int[100];
         Random random = new Random();
 
@@ -33,11 +32,10 @@ public class Main {
         System.out.println("Max number: " + maxNumber);
     }
 
-    private static void ex_2() {
-    /*  2. Написать метод, который определяет, является ли год високосным, и возвращает boolean
+    /* 2. Написать метод, который определяет, является ли год високосным, и возвращает boolean
         (високосный - true, не високосный - false). Каждый 4-й год является високосным,
-        кроме каждого 100-го, при этом каждый 400-й – високосный.
-    */
+        кроме каждого 100-го, при этом каждый 400-й – високосный. */
+    private static void ex_2() {
         Scanner yearScanner = new Scanner(System.in);
         System.out.print("Введите год: ");
         int year = Integer.parseInt(yearScanner.nextLine());
@@ -55,12 +53,11 @@ public class Main {
         return false;
     }
 
-    private static void ex_3() {
-    /*  3. Дан массив nums = [3,2,2,3] и число val = 3.
+    /* 3. Дан массив nums = [3,2,2,3] и число val = 3.
         Если в массиве есть числа, равные заданному, нужно перенести эти элементы в конец массива.
         Таким образом, первые несколько (или все) элементов массива должны быть отличны от заданного,
-        а остальные - равны ему.
-    */
+        а остальные - равны ему. */
+    private static void ex_3() {
         int val = 3;
         int[] arr = new int[30];
         Random random = new Random();
