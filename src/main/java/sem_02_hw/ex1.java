@@ -21,6 +21,6 @@ public class ex1 {
     private static boolean checkPalindrom(String inputStr) {
         StringBuilder line = new StringBuilder();
         line.append(inputStr);
-        return line.toString().equals(line.reverse().toString());
+        return line.toString().equalsIgnoreCase(line.reverse().toString());
     }
 }
