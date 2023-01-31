@@ -13,31 +13,26 @@ public class Ex1 {
     public static void main(String[] args) {
         List<String> linkedList = new LinkedList<>();
         Scanner lineScanner = new Scanner(System.in);
+        String inputLine = "";
 
         while (true) {
-            String inputLine = "";
             System.out.println("Введите строку или команду (print, exit, revert):");
-
-            try {
-                inputLine = lineScanner.nextLine();
-            } catch (Exception e) {
-                System.out.print("Ошибка ввода данных!");
-                e.printStackTrace();
+            inputLine = lineScanner.nextLine();
+            if (inputLine.isBlank()) {
+                continue;
             }
 
-            if (!inputLine.isBlank()) {
-                switch (inputLine) {
-                    case "exit" -> System.exit(0);
-                    case "print" -> System.out.println(linkedList);
-                    case "revert" -> {
-                        if (linkedList.size() > 0) {
-                            System.out.printf("Элемент %s удалён из списка%n", linkedList.remove(0));
-                        } else {
-                            System.out.println("В списке нет элементов для удаления");
-                        }
+            switch (inputLine) {
+                case "exit" -> System.exit(0);
+                case "print" -> System.out.println(linkedList);
+                case "revert" -> {
+                    if (linkedList.size() > 0) {
+                        System.out.printf("Элемент %s удалён из списка%n", linkedList.remove(0));
+                    } else {
+                        System.out.println("В списке нет элементов для удаления");
                     }
-                    default -> linkedList.add(0, inputLine);
                 }
+                default -> linkedList.add(0, inputLine);
             }
         }
     }
