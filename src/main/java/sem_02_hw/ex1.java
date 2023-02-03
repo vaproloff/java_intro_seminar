@@ -11,16 +11,25 @@ public class ex1 {
         String inputStr = "";
         do {
             System.out.print("Введите строку: ");
-            inputStr = lineScanner.nextLine();
+            inputStr = lineScanner.nextLine().toLowerCase();
         } while (inputStr.isBlank());
         lineScanner.close();
 
-        System.out.println(checkPalindrom(inputStr) ? "Это палиндром" : "Это не палиндром");
+        System.out.println(checkPalindromSB(inputStr) ? "Это палиндром" : "Это не палиндром");
+        System.out.println(checkPalindromFor(inputStr) ? "Это палиндром" : "Это не палиндром");
     }
 
-    private static boolean checkPalindrom(String inputStr) {
-        StringBuilder line = new StringBuilder();
-        line.append(inputStr);
-        return line.toString().equalsIgnoreCase(line.reverse().toString());
+    private static boolean checkPalindromSB(String inputStr) {
+        StringBuilder line = new StringBuilder(inputStr);
+        return line.toString().equals(line.reverse().toString());
+    }
+
+    private static boolean checkPalindromFor(String inputStr) {
+        for (int i = 0; i < inputStr.length() / 2; i++) {
+            if (inputStr.charAt(i) != inputStr.charAt(inputStr.length() - 1 - i)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
