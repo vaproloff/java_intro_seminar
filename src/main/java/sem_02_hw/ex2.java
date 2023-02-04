@@ -8,6 +8,8 @@ import java.util.Scanner;
     который запишет эту строку в простой текстовый файл, обработайте исключения.
 */
 public class ex2 {
+    private static final String FILE_PATH = "src/main/java/sem_02_hw/file.txt";
+
     public static void main(String[] args) {
         Scanner lineScanner = new Scanner(System.in);
 
@@ -31,9 +33,7 @@ public class ex2 {
         } while (repeats <= 0);
 
         lineScanner.close();
-
-        String filePath = "src/main/java/sem_02_hw/file.txt";
-        printStringToFile(multiplyString(word, repeats), filePath);
+        printStringToFile(multiplyString(word, repeats), FILE_PATH);
     }
 
     private static String multiplyString(String inputStr, int repeats) {
