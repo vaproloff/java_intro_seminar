@@ -11,7 +11,7 @@ import java.util.Scanner;
 */
 public class Ex1 {
     public static void main(String[] args) {
-        List<String> linkedList = new LinkedList<>();
+        List<String> strings = new LinkedList<>();
         Scanner lineScanner = new Scanner(System.in);
         String inputLine = "";
 
@@ -24,15 +24,15 @@ public class Ex1 {
 
             switch (inputLine) {
                 case "exit" -> System.exit(0);
-                case "print" -> System.out.println(linkedList);
+                case "print" -> System.out.println(strings);
                 case "revert" -> {
-                    if (linkedList.size() > 0) {
-                        System.out.printf("Элемент %s удалён из списка%n", linkedList.remove(0));
+                    if (strings.size() > 0) {
+                        System.out.printf("Элемент %s удалён из списка%n", strings.remove(0));
                     } else {
-                        System.out.println("В списке нет элементов для удаления");
+                        System.out.println("В списке нет элементов для удаления%n");
                     }
                 }
-                default -> linkedList.add(0, inputLine);
+                default -> strings.add(0, inputLine);
             }
         }
     }
