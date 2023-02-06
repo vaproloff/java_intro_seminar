@@ -1,6 +1,5 @@
 package sem_05_cw;
 
-import java.util.Collections;
 import java.util.HashMap;
 
 public class Ex0 {
